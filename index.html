@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ND SUD Treatment Documentation Reference for LACs</title>
+<meta name="description" content="North Dakota substance use disorder treatment documentation requirements: discharge summaries, treatment plans, plan reviews, and ASAM level-of-care changes. Researched October 10, 2026.">
+<style>
+:root{--bg:#f5f7fa;--panel:#fff;--ink:#1d2733;--muted:#5a6878;--line:#d9e0e8;--brand:#1f4e79;--brand2:#2f6fa8;--accent:#c9822b;--ok:#2e7d4f;--warnbg:#fff6e5;--info:#e9f2fb;--state:#e8f4ec;--best:#f3eefb;--silent:#fdeeee;--radius:10px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+a{color:var(--brand2)}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.skip{position:absolute;left:-9999px;top:0;background:#000;color:#fff;padding:8px 12px;z-index:100}
+.skip:focus{left:8px;top:8px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+header.top{background:linear-gradient(120deg,#163a5c,#1f4e79 60%,#2f6fa8);color:#fff;padding:18px 24px 16px}
+header.top h1{margin:0;font-size:1.45rem;letter-spacing:.2px}
+header.top p{margin:4px 0 0;color:#dbe7f3;font-size:.92rem}
+.toolbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:12px}
+.search{flex:1 1 320px;position:relative}
+.search input{width:100%;padding:10px 12px 10px 36px;border-radius:8px;border:1px solid #9fb6cc;font-size:1rem}
+.search svg{position:absolute;left:10px;top:50%;transform:translateY(-50%);opacity:.6}
+.btn{border:1px solid var(--line);background:#fff;color:var(--ink);padding:8px 12px;border-radius:8px;cursor:pointer;font-size:.92rem}
+.btn:hover{background:#eef3f8}
+header .btn{background:rgba(255,255,255,.12);color:#fff;border-color:rgba(255,255,255,.35)}
+header .btn:hover{background:rgba(255,255,255,.22)}
+#searchStatus{font-size:.85rem;color:#dbe7f3;min-width:150px}
+.layout{display:grid;grid-template-columns:250px 1fr;min-height:calc(100vh - 140px)}
+nav.side{background:#fff;border-right:1px solid var(--line);padding:14px 10px;position:sticky;top:0;align-self:start;max-height:100vh;overflow:auto}
+nav.side ul{list-style:none;margin:0;padding:0}
+nav.side button{display:flex;gap:10px;align-items:center;width:100%;text-align:left;background:none;border:0;padding:10px 12px;border-radius:8px;cursor:pointer;font-size:.95rem;color:var(--ink)}
+nav.side button:hover{background:#eef3f8}
+nav.side button[aria-selected="true"]{background:var(--brand);color:#fff}
+nav.side .num{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;background:#e3ebf3;color:var(--brand);font-size:.78rem;font-weight:700;flex:none}
+nav.side button[aria-selected="true"] .num{background:#fff}
+nav.side .meta{margin:16px 8px 0;font-size:.8rem;color:var(--muted);border-top:1px solid var(--line);padding-top:12px}
+main{padding:22px 28px 60px;max-width:1150px}
+section.tab{display:none}
+section.tab.active{display:block}
+body.searching section.tab{display:block}
+body.searching section.tab.nohits{display:none}
+h2{font-size:1.4rem;margin:0 0 6px;color:var(--brand)}
+h3{font-size:1.1rem;margin:0 0 8px}
+.lead{color:var(--muted);margin:0 0 16px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px;margin:0 0 14px;box-shadow:0 1px 2px rgba(20,40,60,.04)}
+.card.hidden{display:none}
+details.card>summary{cursor:pointer;font-weight:650;font-size:1.03rem;list-style:none;display:flex;justify-content:space-between;gap:10px;align-items:center}
+details.card>summary::-webkit-details-marker{display:none}
+details.card>summary::after{content:"+";font-size:1.3rem;color:var(--brand2);line-height:1}
+details.card[open]>summary::after{content:"\2212"}
+details.card[open]>summary{margin-bottom:10px;border-bottom:1px solid var(--line);padding-bottom:8px}
+.tag{display:inline-block;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.4px;padding:2px 8px;border-radius:999px;margin-right:6px;vertical-align:middle}
+.t-state{background:#d7efdf;color:#1e5e37}.t-medicaid{background:#dceaf8;color:#1f4e79}.t-fed{background:#e8e2f6;color:#4b2f84}.t-best{background:#f1e6d4;color:#7a4b0d}.t-silent{background:#f9dcdc;color:#8a1f1f}.t-draft{background:#eee;color:#444}
+blockquote.rule{margin:10px 0;padding:10px 14px;border-left:4px solid var(--ok);background:var(--state);border-radius:0 8px 8px 0}
+blockquote.rule cite{display:block;font-style:normal;font-size:.82rem;color:var(--muted);margin-top:6px}
+.note{padding:10px 14px;border-radius:8px;margin:10px 0;font-size:.95rem}
+.note.silent{background:var(--silent);border:1px solid #f0c4c4}.note.warn{background:var(--warnbg);border:1px solid #f0d49b}.note.info{background:var(--info);border:1px solid #c8dcf0}
+table{width:100%;border-collapse:collapse;font-size:.93rem;background:#fff}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:#eef3f8;color:#1b3a57}
+tbody tr:nth-child(even){background:#fafcfe}
+.tablewrap{overflow-x:auto}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-bottom:14px}
+.kpi{background:#fff;border:1px solid var(--line);border-left:5px solid var(--brand2);border-radius:var(--radius);padding:12px 14px}
+.kpi b{display:block;font-size:.8rem;text-transform:uppercase;color:var(--muted);letter-spacing:.4px}
+ul.check{list-style:none;padding:0;margin:0}
+ul.check li{display:flex;gap:10px;align-items:flex-start;padding:7px 4px;border-bottom:1px dashed var(--line)}
+ul.check input{width:19px;height:19px;margin-top:3px;flex:none;accent-color:var(--brand)}
+ul.check label{cursor:pointer}
+ul.check small{display:block;color:var(--muted)}
+.progress{height:8px;background:#e3ebf3;border-radius:99px;overflow:hidden;margin:6px 0 12px}
+.progress>div{height:100%;background:var(--ok);width:0;transition:width .2s}
+.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.levelpick{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 14px}
+.levelpick button{border:1px solid var(--line);background:#fff;border-radius:8px;padding:8px 11px;cursor:pointer;font-weight:600;color:var(--brand)}
+.levelpick button[aria-pressed="true"]{background:var(--brand);color:#fff;border-color:var(--brand)}
+dl.facts{display:grid;grid-template-columns:220px 1fr;margin:0}
+dl.facts dt,dl.facts dd{margin:0;padding:8px 10px;border-bottom:1px solid var(--line)}
+dl.facts dt{font-weight:650;background:#f6f9fc}
+.timeline{position:relative;margin:10px 0 0 10px;padding-left:22px;border-left:3px solid #c7d6e6}
+.timeline .ev{position:relative;margin:0 0 14px}
+.timeline .ev::before{content:"";position:absolute;left:-31px;top:4px;width:15px;height:15px;border-radius:50%;background:#fff;border:3px solid var(--brand2)}
+.timeline .ev b{color:var(--brand)}
+.wizard .step{border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px;margin-bottom:12px;background:#fff}
+.wizard .step h4{margin:0 0 8px;font-size:1rem;color:var(--brand)}
+.wizard .step.dim{opacity:.55}
+.wizard label.opt{display:flex;gap:8px;align-items:flex-start;padding:6px 4px;cursor:pointer}
+.wizard select{padding:7px;border-radius:6px;border:1px solid #b8c6d4;font-size:.95rem;max-width:100%}
+.dimgrid td input[type=text]{width:100%;padding:6px;border:1px solid #c5d1dd;border-radius:6px}
+.result{border:2px solid var(--ok);background:#f4fbf6;border-radius:var(--radius);padding:14px 16px}
+mark{background:#ffe48a;padding:0 1px;border-radius:2px}
+.small{font-size:.86rem;color:var(--muted)}
+.cite{font-size:.84rem;color:var(--muted)}
+footer{padding:18px 28px;color:var(--muted);font-size:.85rem;border-top:1px solid var(--line);background:#fff}
+.legend{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 0}
+@media (max-width:860px){.layout{grid-template-columns:1fr}nav.side{position:static;max-height:none;border-right:0;border-bottom:1px solid var(--line)}nav.side ul{display:flex;flex-wrap:wrap;gap:4px}nav.side button{width:auto}.grid2{grid-template-columns:1fr}dl.facts{grid-template-columns:1fr}main{padding:16px}}
+@media print{
+ body{background:#fff;font-size:11pt}
+ header.top{background:#fff;color:#000;padding:0 0 8px;border-bottom:2px solid #000}
+ header.top p{color:#333}
+ .toolbar,nav.side,.noprint,.levelpick,.btn{display:none!important}
+ .layout{display:block} main{padding:0;max-width:none}
+ section.tab{display:block!important;page-break-before:always}
+ section.tab:first-of-type{page-break-before:avoid}
+ .card,.wizard .step{box-shadow:none;break-inside:avoid}
+ details.card>summary::after{content:""}
+ a{color:#000}
+ a[href^="http"]::after{content:" (" attr(href) ")";font-size:8pt;color:#444;word-break:break-all}
+ body.print-one section.tab{display:none!important}
+ body.print-one section.tab.print-target{display:block!important;page-break-before:avoid}
+ body.print-one section.tab.print-target .card:not(.printable){display:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <h1>North Dakota SUD Treatment Documentation: Quick Reference for LACs</h1>
+  <p>Discharge summaries · Master treatment plans · Plan reviews · ASAM level-of-care changes · Confidentiality. <strong>Researched October 10, 2026.</strong> Always check the current rules and your program's policies before relying on this page.</p>
+  <div class="toolbar" role="search">
+    <div class="search">
+      <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="7" fill="none" stroke="#1f4e79" stroke-width="2.4"/><path d="M15.5 15.5L22 22" stroke="#1f4e79" stroke-width="2.4" stroke-linecap="round"/></svg>
+      <label for="q" class="sr">Search this reference</label>
+      <input id="q" type="search" placeholder="Search all topics, e.g. discharge, 3.5, signature, weekly…" autocomplete="off">
+    </div>
+    <span id="searchStatus" aria-live="polite"></span>
+    <button class="btn" id="expandAll" type="button">Expand all</button>
+    <button class="btn" id="collapseAll" type="button">Collapse all</button>
+    <button class="btn" id="printAll" type="button">Print / PDF</button>
+  </div>
+</header>
+<div class="layout">
+<nav class="side" aria-label="Topics">
+  <ul role="tablist" aria-orientation="vertical">
+    <li><button role="tab" aria-selected="true" aria-controls="t-overview" id="b-overview" data-tab="t-overview"><span class="num">i</span>Overview</button></li>
+    <li><button role="tab" aria-selected="false" aria-controls="t-discharge" id="b-discharge" data-tab="t-discharge"><span class="num">1</span>Discharge summaries</button></li>
+    <li><button role="tab" aria-selected="false" aria-controls="t-plan" id="b-plan" data-tab="t-plan"><span class="num">2</span>Master treatment plan</button></li>
+    <li><button role="tab" aria-selected="false" aria-controls="t-review" id="b-review" data-tab="t-review"><span class="num">3</span>Plan reviews &amp; updates</button></li>
+    <li><button role="tab" aria-selected="false" aria-controls="t-levels" id="b-levels" data-tab="t-levels"><span class="num">4</span>ASAM level selector</button></li>
+    <li><button role="tab" aria-selected="false" aria-controls="t-loc" id="b-loc" data-tab="t-loc"><span class="num">5</span>Level-of-care changes</button></li>
+    <li><button role="tab" aria-selected="false" aria-controls="t-deadlines" id="b-deadlines" data-tab="t-deadlines"><span class="num">6</span>Deadlines &amp; timeline</button></li>
+    <li><button role="tab" aria-selected="false" aria-controls="t-conf" id="b-conf" data-tab="t-conf"><span class="num">7</span>Confidentiality (Part 2)</button></li>
+    <li><button role="tab" aria-selected="false" aria-controls="t-sources" id="b-sources" data-tab="t-sources"><span class="num">8</span>Sources &amp; gaps</button></li>
+  </ul>
+  <div class="meta">
+    <div><strong>Researched:</strong> Oct 10, 2026</div>
+    <div><strong>Rules in force:</strong> NDAC art. 75-09.1 (ch. 01 last amended Apr 1, 2018)</div>
+    <div style="margin-top:6px">Labels:</div>
+    <div class="legend"><span class="tag t-state">ND rule</span><span class="tag t-medicaid">ND Medicaid</span><span class="tag t-fed">Federal</span><span class="tag t-best">ASAM / best practice</span><span class="tag t-silent">ND silent</span><span class="tag t-draft">Draft only</span></div>
+  </div>
+</nav>
+<main id="main" tabindex="-1">
+
+<section class="tab active" id="t-overview" role="tabpanel" aria-labelledby="b-overview">
+  <h2>Overview</h2>
+  <p class="lead">This page covers documentation rules for licensed SUD treatment programs in North Dakota. It quotes the ND Administrative Code (NDAC) where possible and keeps state requirements separate from ND Medicaid policy, federal rules, and ASAM or accreditation best practice.</p>
+  <div class="kpis">
+    <div class="kpi"><b>Treatment plan due</b><span>Social detox: end of day 1 · OP/IOP: end of 3rd session · Day treatment, inpatient, residential: end of 5th working day</span></div>
+    <div class="kpi"><b>Plan review (minimum)</b><span>OP: every 2 months or 8 sessions (whichever comes first) · IOP: every 2 weeks · 3.1: monthly · 2.5/3.5/3.7: weekly</span></div>
+    <div class="kpi"><b>Discharge summary deadline</b><span>No set number of days in ND rule. Your program's written policy must set the timeframe (§75-09.1-01-22(6)).</span></div>
+    <div class="kpi"><b>Level change</b><span>Write a transfer summary in measurable, behavioral terms. Meet a §75-09.1-01-20 criterion. An LAC must attend the team meeting.</span></div>
+  </div>
+  <details class="card" open>
+    <summary>How the ND rules are organized</summary>
+    <p>NDAC <strong>Article 75-09.1 “Substance Abuse Treatment Programs”</strong> is the licensing standard enforced by the ND Department of Health and Human Services (HHS), Behavioral Health Division. <strong>Chapter 75-09.1-01</strong> (General Standards) holds nearly all documentation requirements: assessment, the individual treatment plan, continued stay, discharge/transfer criteria, referrals, and client records. Chapters <strong>-02 through -08</strong> set the definition, provider, program, and admission criteria for each level of care. Chapter <strong>-09</strong> covers DUI Seminars (Level 0.5), and chapter <strong>-10</strong> covers Opioid Treatment Programs.</p>
+    <div class="tablewrap"><table>
+      <thead><tr><th>Chapter</th><th>Level (as named in rule, ASAM 3rd-ed. style)</th></tr></thead>
+      <tbody>
+        <tr><td><a href="https://ndlegis.gov/information/acdata/pdf/75-09.1-01.pdf">75-09.1-01</a></td><td>General standards (all programs)</td></tr>
+        <tr><td><a href="https://ndlegis.gov/information/acdata/pdf/75-09.1-02.pdf">-02</a> / <a href="https://ndlegis.gov/information/acdata/pdf/75-09.1-02.1.pdf">-02.1</a></td><td>Clinically Managed Low-Intensity Residential, Level III.1 (adult / adolescent)</td></tr>
+        <tr><td><a href="https://ndlegis.gov/information/acdata/pdf/75-09.1-03.pdf">-03</a> / <a href="https://ndlegis.gov/information/acdata/pdf/75-09.1-03.1.pdf">-03.1</a></td><td>Clinically Managed High-Intensity (adult) / Medium-Intensity (adolescent) Residential, Level III.5</td></tr>
+        <tr><td><a href="https://ndlegis.gov/information/acdata/pdf/75-09.1-04.pdf">-04</a> / <a href="https://ndlegis.gov/information/acdata/pdf/75-09.1-04.1.pdf">-04.1</a></td><td>Medically Monitored Intensive (adult) / High-Intensity (adolescent) Inpatient, Level III.7</td></tr>
+        <tr><td><a href="https://ndlegis.gov/information/acdata/pdf/75-09.1-05.pdf">-05</a> / <a href="https://ndlegis.gov/information/acdata/pdf/75-09.1-05.1.pdf">-05.1</a></td><td>Partial Hospitalization / Day Treatment, Level II.5</td></tr>
+        <tr><td><a href="https://ndlegis.gov/information/acdata/pdf/75-09.1-06.pdf">-06</a> / <a href="https://ndlegis.gov/information/acdata/pdf/75-09.1-06.1.pdf">-06.1</a></td><td>Intensive Outpatient, Level II.1</td></tr>
+        <tr><td><a href="https://ndlegis.gov/information/acdata/pdf/75-09.1-07.pdf">-07</a> / <a href="https://ndlegis.gov/information/acdata/pdf/75-09.1-07.1.pdf">-07.1</a></td><td>Outpatient Services, Level I (includes chronic care &amp; maintenance)</td></tr>
+        <tr><td><a href="https://ndlegis.gov/information/acdata/pdf/75-09.1-08.pdf">-08</a></td><td>Social Detoxification, Level III.2-D</td></tr>
+        <tr><td><a href="https://ndlegis.gov/information/acdata/pdf/75-09.1-09.pdf">-09</a></td><td>DUI Seminar, Level 0.5</td></tr>
+        <tr><td><a href="https://ndlegis.gov/information/acdata/pdf/75-09.1-10.pdf">-10</a></td><td>Opioid Treatment Programs</td></tr>
+        <tr><td><a href="https://ndlegis.gov/information/acdata/pdf/75-09.1-11.pdf">-11</a> / <a href="https://ndlegis.gov/information/acdata/pdf/75-09.1-12.pdf">-12</a></td><td>SUD Voucher System / Medication Units</td></tr>
+      </tbody>
+    </table></div>
+  </details>
+  <details class="card" open>
+    <summary>Important caveats before you rely on this page</summary>
+    <ul>
+      <li><span class="tag t-state">ND rule</span>Chapter 75-09.1-01 defines “ASAM patient placement criteria” as <em>“the third edition, revised”</em> (§75-09.1-01-01(1)). Its record-content rule, however, calls for a six-dimension assessment under <em>“the current version”</em> of the ASAM criteria (§75-09.1-01-22(5)(c)). The rules still use 3rd-edition level names and dimensions, and they refer to a “five-axis” DSM assessment (§§75-09.1-01-14(5), -22(5)(c)) even though DSM-5 dropped the multiaxial system.</li>
+      <li><span class="tag t-draft">Draft only</span>In 2024, HHS circulated <a href="https://www.hhs.nd.gov/behavioral-health/licensing/draft-administrative-code-revisions">draft revisions to Article 75-09.1</a> to align with ASAM 4th edition, DSM-5, and current state and federal law (comments were due June 12, 2024). As of October 10, 2026, the official code on ndlegis.gov still shows the 2004/2018 text for chapters 01–08, so the draft is <strong>not in effect</strong>. Watch for adoption: deadlines and review frequencies may change.</li>
+      <li><span class="tag t-best">Best practice</span>ASAM is not a regulator. Where this page cites ASAM 4th-edition practice, CARF, or Joint Commission norms, those are <em>not</em> ND legal requirements unless your payer, contract, or accreditor makes them binding.</li>
+      <li>Your program's written policies can be stricter than the rules, and ND requires programs to adopt several of these policies (e.g., timeframes for record entries). <strong>Follow your program policy when it is stricter.</strong></li>
+    </ul>
+  </details>
+  <details class="card">
+    <summary>LAC scope that touches documentation (NDCC 43-45 &amp; NDAC Title 4.5)</summary>
+    <blockquote class="rule">“Counseling or assessment regarding an individual's use or abuse of alcohol or a controlled substance must be provided by a licensed addiction counselor as required by North Dakota Century Code chapter 43-45. The provision of case management and educational services do not need to be performed by a licensed addiction counselor. A licensed addiction counselor must be present in all team meetings at which level of care and treatment planning decisions are made regarding a client receiving or referred for substance abuse treatment services.”<cite><a href="https://ndlegis.gov/information/acdata/pdf/75-09.1-01.pdf">NDAC §75-09.1-01-15(6)</a>; same language for Level I at §75-09.1-07-03(5)</cite></blockquote>
+    <ul>
+      <li><span class="tag t-state">ND law</span>NDCC §43-45-01(1) defines “addiction counseling” as counseling or assessment regarding a substance-related or addictive disorder identified by the DSM. Under §43-45-05.2, only licensees may practice it or represent themselves as addiction counselors. <a href="https://ndlegis.gov/cencode/t43c45.pdf">NDCC ch. 43-45</a></li>
+      <li><span class="tag t-state">ND rule</span>LACs must follow the most recently published NAADAC Code of Ethics, which includes duties on records and confidentiality. <a href="https://ndlegis.gov/information/acdata/pdf/4.5-02.1-05.pdf">NDAC §4.5-02.1-05-01</a> (amended Oct 1, 2025)</li>
+      <li><span class="tag t-silent">ND silent</span>Neither NDCC 43-45 nor NDAC Title 4.5 sets treatment plan or discharge summary deadlines. Those come from the program licensing rules (75-09.1) and payer policy.</li>
+    </ul>
+  </details>
+</section>
+<section class="tab" id="t-discharge" role="tabpanel" aria-labelledby="b-discharge">
+  <h2>1. Discharge summaries</h2>
+  <p class="lead">What a discharge or transfer summary must contain, when it is due, and how it connects to the discharge and transfer criteria.</p>
+  <details class="card" open>
+    <summary>Required contents (ND rule)</summary>
+    <blockquote class="rule">“Discharge summary describing in measurable and behavioral terms the client's progress and attainment of treatment plan goals and criteria for discharge. When the client is transferred, the discharge summary must include a discharge plan which identifies the treatment goals not yet achieved as well as any problems that have been deferred for treatment by a subsequent provider.”<cite><a href="https://ndlegis.gov/information/acdata/pdf/75-09.1-01.pdf">NDAC §75-09.1-01-22(5)(t)</a></cite></blockquote>
+    <blockquote class="rule">“Transfer summary describing in measurable and behavioral terms a client's move from one level of care to another.”<cite>NDAC §75-09.1-01-22(5)(s)</cite></blockquote>
+    <blockquote class="rule">“If admission, ongoing care, or discharge criteria as described by the department have not been met, the provider must document the grounds for placement, ongoing care, or discharge decisions.”<cite>NDAC §75-09.1-01-22(5)(u)</cite></blockquote>
+    <blockquote class="rule">“All referrals and recommendations must be made part of the treatment or discharge plan.” A program must also have a written policy that “verifies appropriate referral during and after treatment.”<cite>NDAC §75-09.1-01-21(1)–(2)</cite></blockquote>
+  </details>
+  <details class="card" open>
+    <summary>Timing: when is the discharge summary due?</summary>
+    <div class="note silent"><span class="tag t-silent">ND silent</span><strong>The ND rules set no number of days for completing a discharge or transfer summary.</strong> Instead, each program “shall implement a written policy that specifies time frames for entries into the records of a client, such as clinical information, critical incidents or interactions, progress notes, and discharge summaries” (<a href="https://ndlegis.gov/information/acdata/pdf/75-09.1-01.pdf">NDAC §75-09.1-01-22(6)</a>). <strong>Your program policy sets the deadline. Look it up and follow it.</strong></div>
+    <ul>
+      <li><span class="tag t-medicaid">ND Medicaid</span>Records must “fully justify and disclose the extent of services provided and billed” and be kept “for at least 7 years after the last date the claim was paid or denied.” <a href="https://www.hhs.nd.gov/sites/default/files/documents/medicaid-policies/substance-use-disorder-treatment-services.pdf">ND Medicaid SUD Services policy</a> (updated April 2026), Documentation Requirements.</li>
+      <li><span class="tag t-medicaid">ND Medicaid</span>The ND Medicaid <a href="https://www.nd.gov/eforms/Doc/sfn00079.pdf">SUD Service Authorization Request (SFN 79)</a> states that, effective November 1, 2008, discharge documentation is required by ND Medicaid. It gives no completion deadline.</li>
+      <li><span class="tag t-best">Best practice</span>Accreditors and many payers expect discharge summaries to be completed promptly after discharge. Program policies often set a limit such as 7–30 days. That range is a common convention, <strong>not an ND requirement</strong>, and this research did not verify a specific CARF or Joint Commission number.</li>
+      <li><span class="tag t-draft">Draft only</span>The 2024 HHS draft revisions propose more detailed transfer and discharge documentation, including for unplanned discharges. They are not adopted.</li>
+    </ul>
+  </details>
+  <details class="card" open>
+    <summary>Discharge &amp; transfer criteria to document (ND rule)</summary>
+    <p>“Before a program may transfer or discharge a client, the client must have” met <strong>one</strong> of these criteria (<a href="https://ndlegis.gov/information/acdata/pdf/75-09.1-01.pdf">NDAC §75-09.1-01-20</a>):</p>
+    <ol>
+      <li><strong>Goals achieved:</strong> “Achieved the goals articulated in the client's individualized treatment plan and resolved the problems that justified admission to the present level of care with progress evaluated and a determination has been made that the client is ready for a less intensive level of care or independent living.”</li>
+      <li><strong>No further progress likely:</strong> “Been unable to resolve the problems that justified admission to the present level of care despite amendments to the treatment plan and no further progress is likely indicating the need for another level of care or type of service.”</li>
+      <li><strong>Lack of capacity:</strong> “Demonstrated a lack of capacity to resolve problems indicating the need for another level of care or type of service.”</li>
+      <li><strong>Intensification or new problems:</strong> “Experienced an intensification of problems or has developed new problems and can be treated effectively only at a more intensive level of care.”</li>
+    </ol>
+    <p class="small">If none of these fits (for example, an against-advice or administrative discharge), document the grounds for the decision under §75-09.1-01-22(5)(u). ND Medicaid repeats the same four criteria in its SUD policy. Section 75-09.1-01-20 does <strong>not</strong> apply to opioid treatment programs (NDAC §75-09.1-10-02(1)(a)).</p>
+  </details>
+  <div class="card printable" id="dcList">
+    <div class="row" style="justify-content:space-between"><h3>Printable checklist: discharge / transfer summary</h3><span class="noprint row"><button class="btn" type="button" data-print="t-discharge">Print this checklist</button><button class="btn" type="button" data-clear="dc">Clear</button></span></div>
+    <div class="progress" aria-hidden="true"><div id="dcBar"></div></div>
+    <p class="small" id="dcCount" aria-live="polite"></p>
+    <ul class="check" data-group="dc">
+      <li><input type="checkbox" id="dc1"><label for="dc1">Progress described in <strong>measurable and behavioral terms</strong><small>§75-09.1-01-22(5)(t) · ND rule</small></label></li>
+      <li><input type="checkbox" id="dc2"><label for="dc2">Attainment of each treatment plan goal (met / partially met / not met, with evidence)<small>§-22(5)(t) · ND rule</small></label></li>
+      <li><input type="checkbox" id="dc3"><label for="dc3">Which discharge/transfer criterion was met (one of the four in §-20)<small>§-22(5)(t), §-20 · ND rule</small></label></li>
+      <li><input type="checkbox" id="dc4"><label for="dc4">If criteria were not met, the grounds for the discharge decision<small>§-22(5)(u) · ND rule</small></label></li>
+      <li><input type="checkbox" id="dc5"><label for="dc5">If transferred, a discharge plan listing <strong>goals not yet achieved</strong><small>§-22(5)(t) · ND rule</small></label></li>
+      <li><input type="checkbox" id="dc6"><label for="dc6">If transferred, problems <strong>deferred</strong> to the next provider<small>§-22(5)(t) · ND rule</small></label></li>
+      <li><input type="checkbox" id="dc7"><label for="dc7">Separate transfer summary for any level-of-care move (measurable, behavioral)<small>§-22(5)(s) · ND rule</small></label></li>
+      <li><input type="checkbox" id="dc8"><label for="dc8">All referrals and recommendations written into the discharge plan<small>§-21(1) · ND rule</small></label></li>
+      <li><input type="checkbox" id="dc9"><label for="dc9">Signed, dated, and Part 2-compliant consent before sending records to the next provider; redisclosure notice attached<small>§-21(3); 42 CFR 2.31–2.32 · ND rule + Federal</small></label></li>
+      <li><input type="checkbox" id="dc10"><label for="dc10">Completed within the timeframe your <strong>program policy</strong> sets<small>§-22(6) · ND rule (the policy sets the number)</small></label></li>
+      <li><input type="checkbox" id="dc11"><label for="dc11">Updated six-dimension (ASAM) status at discharge<small>Best practice. Supports §-20 and §-22(5)(t).</small></label></li>
+      <li><input type="checkbox" id="dc12"><label for="dc12">Medications at discharge, relapse-prevention or continuing-care plan, and crisis resources (e.g., 988)<small>Best practice / Draft only (2024 HHS draft)</small></label></li>
+    </ul>
+  </div>
+</section>
+
+<section class="tab" id="t-plan" role="tabpanel" aria-labelledby="b-plan">
+  <h2>2. Master (individual) treatment plan</h2>
+  <p class="lead">ND rules call it the “individual treatment plan” or “individualized plan.” Many programs call it the master treatment plan.</p>
+  <details class="card" open>
+    <summary>Deadlines after admission (ND rule)</summary>
+    <blockquote class="rule">“A program shall develop and document an individual treatment plan that is as comprehensive as possible given the time in treatment and the client's condition. The individual treatment plan shall be developed according to the following schedule: a. By the end of the first day for a client in a social detoxification program; b. By the end of the third session for a client receiving outpatient services or intensive outpatient treatment; and c. By the end of the fifth working day for a client receiving day treatment, inpatient, or low-intensity and high-intensity residential treatment.”<cite><a href="https://ndlegis.gov/information/acdata/pdf/75-09.1-01.pdf">NDAC §75-09.1-01-15(3)</a>; adopted by reference in the <a href="https://www.hhs.nd.gov/sites/default/files/documents/medicaid-policies/substance-use-disorder-treatment-services.pdf">ND Medicaid SUD policy</a> (Plan of Care)</cite></blockquote>
+    <div class="tablewrap"><table>
+      <thead><tr><th>Setting</th><th>Plan due</th><th>Source</th></tr></thead>
+      <tbody>
+        <tr><td>Social detoxification (III.2-D)</td><td>End of the <strong>first day</strong>. The plan is preliminary and covers problems in ASAM dimensions 2–6.</td><td>§-15(3)(a); §75-09.1-08-02(12)</td></tr>
+        <tr><td>Outpatient (I) and Intensive Outpatient (II.1)</td><td>End of the <strong>third session</strong></td><td>§-15(3)(b)</td></tr>
+        <tr><td>Day treatment / PHP (II.5), inpatient (III.7), low-intensity (III.1) and high-intensity (III.5) residential</td><td>End of the <strong>fifth working day</strong></td><td>§-15(3)(c)</td></tr>
+        <tr><td>Opioid treatment program</td><td>Initial and periodic assessment; care plan within <strong>14 calendar days</strong> of admission (federal)</td><td><a href="https://www.ecfr.gov/current/title-42/chapter-I/subchapter-A/part-8/subpart-C/section-8.12">42 CFR 8.12(f)(4)</a></td></tr>
+        <tr><td>DUI Seminar (0.5)</td><td>No individual treatment plan requirement found in ch. 75-09.1-09</td><td><span class="tag t-silent">ND silent</span></td></tr>
+      </tbody>
+    </table></div>
+    <p class="small">“Working day” and “session” are not defined in ch. 75-09.1-01. Count conservatively and define both terms in program policy.</p>
+  </details>
+  <details class="card" open>
+    <summary>Who participates and who signs</summary>
+    <ul>
+      <li><span class="tag t-state">ND rule</span><strong>The client participates.</strong> The program develops the plan “with each client's participation” (§-15(2)), and goals reflect “the client's informed choice” (§-15(1)). Problems identified in the assessment are prioritized and addressed in the plan “with the involvement of the client” (§75-09.1-01-14(6)).</li>
+      <li><span class="tag t-state">ND rule</span><strong>Client signature, or documentation of involvement.</strong> The record must include “the individual plan of the client, including the overall plan and the plans for specific services and signature of the client or other documentation of the client's involvement in the plan” (§-22(5)(o)). It must also show “evidence of the direct involvement of the client in the decisionmaking process” (§-22(5)(l)).</li>
+      <li><span class="tag t-state">ND rule</span><strong>An LAC must be present</strong> “in all team meetings at which level of care and treatment planning decisions are made” (§-15(6)). The record must designate “the case manager, licensed addiction counselor, and other staff for the client” (§-22(5)(k)).</li>
+      <li><span class="tag t-state">ND rule</span><strong>Adolescents:</strong> “every reasonable attempt to engage an adolescent's family members or guardian in the adolescent's assessment, treatment, and continuing care” (§75-09.1-01-17(4)).</li>
+      <li><span class="tag t-state">ND rule</span><strong>Level III.1:</strong> the program “shall collaborate with care providers to develop an individual treatment plan for each client with time-specific goals and objectives” (§75-09.1-02-02(6)).</li>
+      <li><span class="tag t-medicaid">ND Medicaid</span>“The ND Medicaid-enrolled rendering or attending provider overseeing the services must approve the plan of care.” The plan must also include the number of programming hours for the level of care (<a href="https://www.hhs.nd.gov/sites/default/files/documents/medicaid-policies/substance-use-disorder-treatment-services.pdf">ND Medicaid SUD policy</a>).</li>
+      <li><span class="tag t-silent">ND silent</span>Ch. 75-09.1-01 does <strong>not</strong> expressly require a counselor or clinician signature on the plan. In contrast, progress notes must be “signed and dated” (§-22(5)(g)). Medicaid “approval” is best shown by a dated provider signature. Most programs, CARF, and The Joint Commission expect the plan to be signed and dated by the responsible clinician.</li>
+    </ul>
+  </details>
+  <details class="card" open>
+    <summary>Required contents (ND rule)</summary>
+    <ul>
+      <li>Comprehensive, coordinated, and individualized, “based on referral and assessment information about the client's strengths, abilities, needs, functional deficits, and preferences” (§-15(2)).</li>
+      <li>Addresses problems from the assessment, prioritized by severity (§-14(6)). The assessment covers the ASAM six dimensions and the DSM diagnosis (§-14(5); §-22(5)(c)).</li>
+      <li>Includes the overall plan and the plans for specific services (§-22(5)(o)).</li>
+      <li>Objectives are measurable, so that progress notes can describe progress “in measurable and behavioral terms” (§-14(7); §-22(5)(g)).</li>
+      <li>Services essential to the client's goals are provided, or the record documents attempts to provide them through staff, affiliation, consultation, or referral (§-15(7)).</li>
+      <li>Referrals and recommendations are written into the plan (§-21(1)).</li>
+    </ul>
+  </details>
+  <div class="card printable" id="tpList">
+    <div class="row" style="justify-content:space-between"><h3>Printable checklist: master treatment plan</h3><span class="noprint row"><button class="btn" type="button" data-print="t-plan">Print this checklist</button><button class="btn" type="button" data-clear="tp">Clear</button></span></div>
+    <div class="progress" aria-hidden="true"><div id="tpBar"></div></div>
+    <p class="small" id="tpCount" aria-live="polite"></p>
+    <ul class="check" data-group="tp">
+      <li><input type="checkbox" id="tp1"><label for="tp1">Completed by the level-specific deadline (day 1 / 3rd session / 5th working day)<small>§-15(3) · ND rule</small></label></li>
+      <li><input type="checkbox" id="tp2"><label for="tp2">Based on referral and assessment info: strengths, abilities, needs, functional deficits, preferences<small>§-15(2) · ND rule</small></label></li>
+      <li><input type="checkbox" id="tp3"><label for="tp3">Problems prioritized by severity from the assessment<small>§-14(6) · ND rule</small></label></li>
+      <li><input type="checkbox" id="tp4"><label for="tp4">Linked to the ASAM six-dimension assessment and DSM diagnosis<small>§-14(5), §-22(5)(c) · ND rule</small></label></li>
+      <li><input type="checkbox" id="tp5"><label for="tp5">Goals reflect the client's informed choice<small>§-15(1) · ND rule</small></label></li>
+      <li><input type="checkbox" id="tp6"><label for="tp6">Measurable, behavioral objectives (time-specific at III.1)<small>§-14(7); §75-09.1-02-02(6) · ND rule</small></label></li>
+      <li><input type="checkbox" id="tp7"><label for="tp7">Overall plan <strong>and</strong> plans for specific services<small>§-22(5)(o) · ND rule</small></label></li>
+      <li><input type="checkbox" id="tp8"><label for="tp8">Essential services listed, or attempts and referrals documented<small>§-15(7) · ND rule</small></label></li>
+      <li><input type="checkbox" id="tp9"><label for="tp9">Referrals and recommendations included<small>§-21(1) · ND rule</small></label></li>
+      <li><input type="checkbox" id="tp10"><label for="tp10">Client signature, <strong>or</strong> other documentation of client involvement<small>§-22(5)(o), (l) · ND rule</small></label></li>
+      <li><input type="checkbox" id="tp11"><label for="tp11">LAC present at the treatment-planning team meeting; LAC and case manager designated<small>§-15(6); §-22(5)(k) · ND rule</small></label></li>
+      <li><input type="checkbox" id="tp12"><label for="tp12">Adolescent: family or guardian engagement attempted and documented<small>§-17(4) · ND rule</small></label></li>
+      <li><input type="checkbox" id="tp13"><label for="tp13">Medicaid: approved by the enrolled rendering/attending provider; programming hours for the level listed<small>ND Medicaid SUD policy</small></label></li>
+      <li><input type="checkbox" id="tp14"><label for="tp14">Clinician signature, credentials, and date<small>Best practice / accreditation (not expressly required by ND rule)</small></label></li>
+    </ul>
+  </div>
+</section>
+<section class="tab" id="t-review" role="tabpanel" aria-labelledby="b-review">
+  <h2>3. Treatment plan reviews &amp; updates</h2>
+  <p class="lead">Minimum frequencies for analyzing progress and updating the plan, plus how often progress notes must be written.</p>
+  <details class="card" open>
+    <summary>The review standard (ND rule)</summary>
+    <blockquote class="rule">“A program must regularly analyze with the active involvement of the client the client's progress toward the accomplishment of goals and modify goals and services as a result of any occurrence that is likely to impact the client's treatment progress. A program must perform such an analysis no less often than: a. Once every two months or every eight sessions, whichever comes first, for a client receiving outpatient services; b. Once a month for a client receiving low-intensity residential treatment; c. Once every two weeks for a client receiving intensive outpatient treatment; d. Once each week for a client receiving high-intensity residential, inpatient, or partial hospitalization or day treatment; and e. Once during the first six months and annually thereafter for a client receiving chronic care and maintenance services.”<cite><a href="https://ndlegis.gov/information/acdata/pdf/75-09.1-01.pdf">NDAC §75-09.1-01-15(5)</a></cite></blockquote>
+    <p><strong>What every review must show:</strong> (1) the client's <em>active involvement</em>; (2) analysis of progress toward each goal; (3) changes to goals and services after any significant occurrence (relapse, new diagnosis, legal or housing change, and so on), <em>not only</em> at the scheduled interval; and (4) a continued-stay justification under §75-09.1-01-19, or a transfer or discharge decision under §-20.</p>
+  </details>
+  <details class="card" open>
+    <summary>Frequency table: plan reviews and progress notes</summary>
+    <div class="tablewrap"><table>
+      <thead><tr><th>Level (ND name)</th><th>Plan review: no less often than</th><th>Progress notes (§-22(6))</th></tr></thead>
+      <tbody>
+        <tr><td>Level I Outpatient</td><td>Every 2 months <strong>or</strong> every 8 sessions, whichever comes first</td><td>Weekly if seen weekly or more; monthly if seen less than weekly</td></tr>
+        <tr><td>Level I Chronic care &amp; maintenance</td><td>Once in the first 6 months, then annually</td><td>Outpatient schedule (weekly/monthly)</td></tr>
+        <tr><td>Level II.1 Intensive Outpatient</td><td>Every 2 weeks</td><td>Weekly</td></tr>
+        <tr><td>Level II.5 Partial Hospitalization / Day Treatment</td><td>Weekly</td><td>Daily</td></tr>
+        <tr><td>Level III.1 Low-Intensity Residential</td><td>Monthly</td><td>Monthly</td></tr>
+        <tr><td>Level III.5 High-Intensity (adult) / Medium-Intensity (adolescent) Residential</td><td>Weekly</td><td>Weekly</td></tr>
+        <tr><td>Level III.7 Medically Monitored Inpatient</td><td>Weekly</td><td>Every shift</td></tr>
+        <tr><td>Level III.2-D Social Detoxification</td><td><span class="tag t-silent">ND silent</span>No interval in §-15(5). Continued stay is assessed under §75-09.1-08-04.</td><td><span class="tag t-silent">ND silent</span>Not listed in §-22(6). Inpatient-style shift notes are a prudent default.</td></tr>
+        <tr><td>Opioid Treatment Program</td><td>Federal: the plan “must be reviewed and updated to reflect responses to treatment.” No fixed interval in 42 CFR 8.12(f)(4).</td><td>Per program policy</td></tr>
+        <tr><td>DUI Seminar (0.5)</td><td>Not applicable (education)</td><td>Not specified</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note info"><span class="tag t-best">ASAM</span>ASAM's 4th edition FAQ says formal reassessment is generally recommended at least monthly at Levels 2.1, 2.5, 3.1, and 3.5 (and on significant change), while <strong>state rules govern required frequency</strong>. For ND, the more frequent state minimums above control (e.g., weekly at 2.5 and 3.5). <a href="https://www.asam.org/asam-criteria/criteria-faq">ASAM Criteria FAQs</a></div>
+    <div class="note warn"><span class="tag t-draft">Draft only</span>The 2024 HHS redline appears to propose new review intervals: for example, annually for long-term remission monitoring, every 3 months for outpatient therapy, and monthly for intensive outpatient and clinically managed residential levels. It also proposes required plan and review elements (problems, goals, measurable objectives, strengths, services, care coordination, significant events) and an emergency-care plan “including when to call 911 and 988.” These proposals are <strong>not in effect</strong>. <a href="https://www.hhs.nd.gov/behavioral-health/licensing/draft-administrative-code-revisions">HHS draft page</a></div>
+  </details>
+  <details class="card">
+    <summary>Continued-stay documentation at each review (ND rule)</summary>
+    <p>“For a client to remain in the current level of care placement, a program must document that the client” meets one of these (<a href="https://ndlegis.gov/information/acdata/pdf/75-09.1-01.pdf">§75-09.1-01-19</a>):</p>
+    <ol>
+      <li>“Is making progress but has not yet achieved the goals articulated in the individualized treatment plan and continued treatment at the present level of care is necessary to permit the client to continue to work toward treatment goals.”</li>
+      <li>“Is not yet making progress but has the capacity to resolve problems and is actively working toward the goals articulated in the individual treatment plan.”</li>
+      <li>“New problems have been identified that are appropriately treated at the present level of care that is the least intensive in which these problems can be addressed effectively.”</li>
+    </ol>
+  </details>
+</section>
+
+<section class="tab" id="t-levels" role="tabpanel" aria-labelledby="b-levels">
+  <h2>4. ASAM level selector</h2>
+  <p class="lead">Pick a level to see its ND chapter, the ASAM 4th-edition (2023) equivalent, plan and review deadlines, and documentation notes.</p>
+  <div class="card printable">
+    <div class="levelpick" id="levelPick" role="group" aria-label="Choose a level of care"></div>
+    <div id="levelOut" aria-live="polite"></div>
+  </div>
+  <details class="card" open>
+    <summary>3rd edition ↔ 4th edition (2023) level crosswalk</summary>
+    <div class="tablewrap"><table>
+      <thead><tr><th>ASAM 3rd ed. (used in ND rule)</th><th>ASAM 4th ed. (2023)</th><th>ND chapter</th></tr></thead>
+      <tbody>
+        <tr><td>0.5 Early Intervention</td><td>Removed as a treatment level (early intervention addressed outside the continuum)</td><td>75-09.1-09 (DUI Seminar)</td></tr>
+        <tr><td>1 Outpatient</td><td>1.0 Long-Term Remission Monitoring; 1.5 Outpatient Therapy; 1.7 Medically Managed Outpatient</td><td>75-09.1-07 / -07.1</td></tr>
+        <tr><td>2.1 Intensive Outpatient</td><td>2.1 Intensive Outpatient</td><td>75-09.1-06 / -06.1</td></tr>
+        <tr><td>2.5 Partial Hospitalization</td><td>2.5 High-Intensity Outpatient</td><td>75-09.1-05 / -05.1</td></tr>
+        <tr><td>(none)</td><td>2.7 Medically Managed Intensive Outpatient</td><td><span class="tag t-silent">No ND chapter</span></td></tr>
+        <tr><td>3.1 Clinically Managed Low-Intensity Residential</td><td>3.1 Clinically Managed Low-Intensity Residential</td><td>75-09.1-02 / -02.1</td></tr>
+        <tr><td>3.3 Clinically Managed Population-Specific High-Intensity Residential</td><td>Removed (folded into 3.5 with enhanced cognitive services)</td><td><span class="tag t-silent">No ND chapter</span></td></tr>
+        <tr><td>3.5 Clinically Managed High-Intensity (adult) / Medium-Intensity (adolescent) Residential</td><td>3.5 Clinically Managed High-Intensity Residential</td><td>75-09.1-03 / -03.1</td></tr>
+        <tr><td>3.7 Medically Monitored Intensive Inpatient</td><td>3.7 Medically Managed Residential</td><td>75-09.1-04 / -04.1</td></tr>
+        <tr><td>4 Medically Managed Intensive Inpatient</td><td>4 Medically Managed Intensive Inpatient</td><td><span class="tag t-silent">No ND chapter</span> (hospital-based)</td></tr>
+      </tbody>
+    </table></div>
+    <h3 style="margin-top:14px">Withdrawal management</h3>
+    <div class="tablewrap"><table>
+      <thead><tr><th>3rd ed.</th><th>4th ed. (WM integrated into levels)</th><th>ND</th></tr></thead>
+      <tbody>
+        <tr><td>1-WM Ambulatory without extended on-site monitoring</td><td>1.7 Medically Managed Outpatient</td><td><span class="tag t-silent">No ND WM chapter</span></td></tr>
+        <tr><td>2-WM Ambulatory with extended on-site monitoring</td><td>2.7 Medically Managed Intensive Outpatient</td><td><span class="tag t-silent">No ND WM chapter</span></td></tr>
+        <tr><td>3.2-WM Clinically Managed Residential WM</td><td>3.5 Clinically Managed High-Intensity Residential (with WM)</td><td>75-09.1-08 Social Detoxification (III.2-D)</td></tr>
+        <tr><td>3.7-WM Medically Monitored Inpatient WM</td><td>3.7 Medically Managed Residential (with WM)</td><td>Within 75-09.1-04 programs as licensed</td></tr>
+        <tr><td>4-WM Medically Managed Intensive Inpatient WM</td><td>4 Medically Managed Intensive Inpatient</td><td>Hospital</td></tr>
+      </tbody>
+    </table></div>
+    <p class="small">Crosswalk based on ASAM's public 4th-edition materials and FAQs. ND Medicaid still bills ASAM 1, 2.1, 2.5, 3.1, 3.2, 3.5, and 3.7 (SUD policy, April 2026). <a href="https://www.asam.org/asam-criteria/criteria-faq">ASAM FAQs</a></p>
+  </details>
+  <details class="card">
+    <summary>The six dimensions: 3rd vs 4th edition names</summary>
+    <div class="tablewrap"><table>
+      <thead><tr><th>#</th><th>3rd edition (2013)</th><th>4th edition (2023)</th></tr></thead>
+      <tbody id="dimTable"></tbody>
+    </table></div>
+    <p class="small">ND's assessment rule lists the areas to assess: “withdrawal potential; medical conditions and complications; psychiatric, including emotional, behavioral, and cognitive functioning and the presence of co-occurring mental health problems; employment; alcohol, tobacco, and other drug use; legal; family and social; readiness to change; relapse, continued use, and continued problem potential; and recovery environment” (<a href="https://ndlegis.gov/information/acdata/pdf/75-09.1-01.pdf">§75-09.1-01-14(2)</a>).</p>
+  </details>
+</section>
+
+<section class="tab" id="t-loc" role="tabpanel" aria-labelledby="b-loc">
+  <h2>5. Level-of-care change walkthrough</h2>
+  <p class="lead">Work through the six dimensions to build a documentation list for a step-up, a step-down, continued stay, or discharge. Nothing you enter leaves this page.</p>
+  <div class="wizard card printable" id="wizard"></div>
+  <details class="card" open>
+    <summary>What ND requires when the level changes</summary>
+    <ul>
+      <li><span class="tag t-state">ND rule</span>A <strong>transfer summary</strong> “describing in measurable and behavioral terms a client's move from one level of care to another” (§-22(5)(s)). When transferring out, the discharge summary must list goals not yet achieved and problems deferred (§-22(5)(t)).</li>
+      <li><span class="tag t-state">ND rule</span>One §-20 criterion must be met <em>before</em> the transfer. Criteria 1 and 2 cover step-down or a change of service type; criteria 3 and 4 cover a change to another level or type of care, including a more intensive level.</li>
+      <li><span class="tag t-state">ND rule</span>The client must meet admission criteria at the receiving level: a DSM SUD diagnosis plus “specifications in each of the ASAM dimensions required for the recommended level of care” (§-18), and the receiving chapter's admission section (e.g., §75-09.1-03-04 for III.5).</li>
+      <li><span class="tag t-state">ND rule</span>An LAC must be present in the team meeting deciding level of care (§-15(6)). Document the client's involvement (§-22(5)(l)) and team conference notes (§-22(5)(m)).</li>
+      <li><span class="tag t-state">ND rule</span>A new or updated plan is due by the receiving level's deadline (§-15(3)). ND does not say whether a transfer within the same program restarts the clock; set this in program policy.</li>
+      <li><span class="tag t-state">ND rule</span>If the placement departs from the department's criteria (for example, because the needed level is unavailable), document the grounds (§-22(5)(u)).</li>
+      <li><span class="tag t-fed">Federal</span>An external referral needs Part 2-compliant consent and the redisclosure notice (§-21(3); 42 CFR 2.31–2.32).</li>
+    </ul>
+  </details>
+</section>
+
+<section class="tab" id="t-deadlines" role="tabpanel" aria-labelledby="b-deadlines">
+  <h2>6. Deadlines &amp; timeline</h2>
+  <p class="lead">Every numeric timeframe found in the sources. Blank cells mean ND sets no number.</p>
+  <div class="card printable">
+    <div class="row noprint" style="margin-bottom:10px"><label for="dlFilter"><strong>Filter by level:</strong></label>
+      <select id="dlFilter"><option value="all">All levels</option></select></div>
+    <div class="tablewrap"><table id="dlTable">
+      <thead><tr><th>Item</th><th>Level(s)</th><th>Timeframe</th><th>Source</th><th>Type</th></tr></thead>
+      <tbody></tbody>
+    </table></div>
+  </div>
+  <div class="card printable">
+    <h3>Example timeline: adult Level III.5 residential admission</h3>
+    <div class="timeline">
+      <div class="ev"><b>Before admission</b>: DSM SUD diagnosis and a six-dimension ASAM assessment showing the client meets III.5 admission criteria (§-18; §75-09.1-03-04; §-14).</div>
+      <div class="ev"><b>Day 1 onward</b>: Progress notes at least <strong>weekly</strong> (§-22(6)(e)). Program policy may require more often.</div>
+      <div class="ev"><b>By end of 5th working day</b>: Individual treatment plan developed with the client, signed by the client or with involvement documented. LAC present at the planning meeting (§-15(3)(c), (6); §-22(5)(o)).</div>
+      <div class="ev"><b>Every week</b>: Plan review with the client's active involvement and continued-stay criteria documented (§-15(5)(d); §-19).</div>
+      <div class="ev"><b>Any significant event</b>: Modify goals and services right away (§-15(5)).</div>
+      <div class="ev"><b>Transfer or discharge</b>: §-20 criterion met. Transfer or discharge summary in measurable, behavioral terms, with goals not yet achieved and deferred problems if transferred. Referrals in the discharge plan (§-20; §-22(5)(s)–(t); §-21(1)).</div>
+      <div class="ev"><b>After discharge</b>: Discharge summary completed within the <strong>program-policy timeframe</strong> (§-22(6)). Records kept at least 7 years after the last claim was paid or denied (ND Medicaid).</div>
+    </div>
+  </div>
+</section>
+
+<section class="tab" id="t-conf" role="tabpanel" aria-labelledby="b-conf">
+  <h2>7. Confidentiality: 42 CFR Part 2 and ND release rules</h2>
+  <details class="card" open>
+    <summary>Key points for discharge and transfer records</summary>
+    <ul>
+      <li><span class="tag t-fed">Federal</span>The 2024 Part 2 final rule (89 FR 12472, Feb 16, 2024) had a compliance date of <strong>February 16, 2026</strong>, so it now applies. Under it, a single consent may cover all future uses and disclosures for treatment, payment, and health care operations (TPO). Each disclosure made with consent must carry the §2.32 notice. <a href="https://www.ecfr.gov/current/title-42/chapter-I/subchapter-A/part-2">42 CFR Part 2 (eCFR)</a></li>
+      <li><span class="tag t-fed">Federal</span>Consent elements are in §2.31. SUD counseling notes need separate consent. Part 2 records cannot be used in proceedings against the patient without consent or a court order (§2.12(d), Subpart E).</li>
+      <li><span class="tag t-state">ND rule</span>Releases must be limited to the information necessary for the referral's purpose, and released records must be stamped or marked to show that further disclosure is prohibited unless the client or legal representative authorizes it (<a href="https://ndlegis.gov/information/acdata/pdf/75-09.1-01.pdf">§75-09.1-01-21(3)</a>). The record must include “signed and dated release forms” (§-22(5)(r)).</li>
+      <li><span class="tag t-state">ND rule</span>Clients have the right to “receive notice of federal confidentiality requirements” (§75-09.1-01-23(1)(e)). Programs need a written policy on how a client can access their own record (§-22(2)).</li>
+    </ul>
+  </details>
+</section>
+<section class="tab" id="t-sources" role="tabpanel" aria-labelledby="b-sources">
+  <h2>8. Sources, gaps &amp; disclaimer</h2>
+  <details class="card" open>
+    <summary>Where ND rules are silent or unclear</summary>
+    <ul>
+      <li><span class="tag t-silent">ND silent</span><strong>Discharge and transfer summary deadline:</strong> no number of days. The program's written policy must set it (§-22(6)).</li>
+      <li><span class="tag t-silent">ND silent</span><strong>Clinician signature on the treatment plan</strong> is not expressly required. Client signature, or documentation of involvement, is required (§-22(5)(o)), and Medicaid requires provider approval.</li>
+      <li><span class="tag t-silent">ND silent</span><strong>Plan review interval for social detoxification</strong> and progress-note frequency for social detox, PHP adolescent variants, and OTPs.</li>
+      <li><span class="tag t-silent">ND silent</span><strong>No ND licensing chapter</strong> for 3.3, ambulatory withdrawal management (1-WM/2-WM), 4th-edition 1.0/1.5/1.7/2.7, or Level 4.</li>
+      <li><span class="tag t-silent">ND silent</span><strong>“Working day” and “session”</strong> are undefined. It is also unclear whether an internal level change restarts the plan deadline.</li>
+      <li><strong>Edition conflict:</strong> the rules define ASAM as the “third edition, revised” (§-01(1)) but require a six-dimension assessment under the “current version” (§-22(5)(c)). They also still cite a five-axis DSM assessment. Ask HHS Behavioral Health Licensing how surveyors apply these until the revisions are adopted.</li>
+      <li><strong>Accreditation:</strong> CARF and Joint Commission timeframes were <em>not</em> verified from primary standards, because those manuals are proprietary. Check your accreditor's current manual.</li>
+    </ul>
+  </details>
+  <details class="card" open>
+    <summary>Primary sources</summary>
+    <ul>
+      <li>NDAC Article 75-09.1, Substance Abuse Treatment Programs: <a href="https://ndlegis.gov/information/acdata/html/75-09.1.html">article index</a>; <a href="https://ndlegis.gov/information/acdata/pdf/75-09.1-01.pdf">ch. 01 General Standards (PDF)</a>; level chapters -02 to -12 (linked on the Overview tab).</li>
+      <li>NDCC ch. 43-45, Addiction Counselors: <a href="https://ndlegis.gov/cencode/t43c45.pdf">PDF</a>.</li>
+      <li>NDAC Title 4.5, Board of Addiction Counseling Examiners: <a href="https://ndlegis.gov/information/acdata/pdf/4.5-02.1-05.pdf">ch. 4.5-02.1-05 (Code of Ethics)</a>; <a href="https://ndlegis.gov/information/acdata/pdf/4.5-02.1-03.pdf">ch. 4.5-02.1-03</a>.</li>
+      <li>ND HHS, <a href="https://www.hhs.nd.gov/behavioral-health/licensing/draft-administrative-code-revisions">Draft Administrative Code Revisions</a> (2024; not adopted).</li>
+      <li>ND Medicaid, <a href="https://www.hhs.nd.gov/sites/default/files/documents/medicaid-policies/substance-use-disorder-treatment-services.pdf">Substance Use Disorder Services policy</a> (updated April 2026); <a href="https://www.hhs.nd.gov/healthcare/medicaid/provider/manuals-and-guidelines">Provider manuals and policies</a>; <a href="https://www.nd.gov/eforms/Doc/sfn00079.pdf">SFN 79</a>.</li>
+      <li>Federal: <a href="https://www.ecfr.gov/current/title-42/chapter-I/subchapter-A/part-2">42 CFR Part 2</a>; <a href="https://www.ecfr.gov/current/title-42/chapter-I/subchapter-A/part-8/subpart-C/section-8.12">42 CFR 8.12</a> (OTPs).</li>
+      <li>ASAM: <a href="https://www.asam.org/asam-criteria">The ASAM Criteria</a>; <a href="https://www.asam.org/asam-criteria/criteria-faq">Criteria FAQs</a>. The ASAM Criteria text is copyrighted, and only public level and dimension names are used here.</li>
+    </ul>
+  </details>
+  <div class="note warn"><strong>Disclaimer.</strong> Researched October 10, 2026 from the sources above. This is an educational summary, not legal advice or an official HHS interpretation. Rules, Medicaid policy, and ASAM guidance change, and HHS has pending draft revisions to Article 75-09.1. Counselors and programs should verify every requirement against the current rules at ndlegis.gov, current ND Medicaid policy, their accreditor's standards, and their own program policies, which may be stricter.</div>
+</section>
+</main>
+</div>
+<footer>ND SUD Treatment Documentation Reference · Researched October 10, 2026 · Verify against current NDAC 75-09.1, ND Medicaid policy, and program policy before use.</footer>
+<script>
+var R="https://ndlegis.gov/information/acdata/pdf/";
+var D3=["Acute Intoxication and/or Withdrawal Potential","Biomedical Conditions and Complications","Emotional, Behavioral, or Cognitive Conditions and Complications","Readiness to Change","Relapse, Continued Use, or Continued Problem Potential","Recovery/Living Environment"];
+var D4=["Intoxication, Withdrawal, and Addiction Medications","Biomedical Conditions","Psychiatric and Cognitive Conditions","Substance Use-Related Risks","Recovery Environment Interactions","Person-Centered Considerations"];
+var L=[
+ {id:"0.5",name:"Level 0.5 DUI Seminar / Early Intervention",ch:"75-09.1-09",ed4:"No 4th-edition level (0.5 removed from the treatment continuum)",plan:"No individual treatment plan requirement found",review:"Not applicable",notes:"Not specified",docs:["Client records and release safeguards under ch. 75-09.1-09 (e.g., §75-09.1-09-12)","Redisclosure stamp on released records"],cites:["75-09.1-09"]},
+ {id:"1",name:"Level I Outpatient",ch:"75-09.1-07 (adult) / 75-09.1-07.1 (adolescent)",ed4:"1.5 Outpatient Therapy (1.7 if medically managed)",plan:"End of the 3rd session (§75-09.1-01-15(3)(b))",review:"Every 2 months or 8 sessions, whichever comes first (§-15(5)(a))",notes:"Weekly if seen weekly or more; monthly if seen less (§-22(6)(d))",docs:["LAC present at level-of-care and planning meetings (§75-09.1-07-03(5))","Admission criteria §75-09.1-07-04 / -07.1-04"],cites:["75-09.1-07","75-09.1-07.1"]},
+ {id:"1cc",name:"Level I Chronic Care & Maintenance",ch:"75-09.1-07 (§75-09.1-07-03(6))",ed4:"Closest: 1.0 Long-Term Remission Monitoring",plan:"End of the 3rd session (outpatient rule, §-15(3)(b))",review:"Once in the first 6 months, then annually (§-15(5)(e))",notes:"Outpatient schedule (§-22(6)(d))",docs:["Schedule set by the client's stability, functioning, and assessed needs (§75-09.1-07-03(6))"],cites:["75-09.1-07"]},
+ {id:"2.1",name:"Level II.1 Intensive Outpatient",ch:"75-09.1-06 / 75-09.1-06.1",ed4:"2.1 Intensive Outpatient",plan:"End of the 3rd session (§-15(3)(b))",review:"Every 2 weeks (§-15(5)(c))",notes:"Weekly (§-22(6)(c))",docs:["Admission criteria §75-09.1-06-04 / -06.1-04","Medicaid: programming hours listed in the plan; reason documented for missed hours"],cites:["75-09.1-06","75-09.1-06.1"]},
+ {id:"2.5",name:"Level II.5 Partial Hospitalization / Day Treatment",ch:"75-09.1-05 / 75-09.1-05.1",ed4:"2.5 High-Intensity Outpatient",plan:"End of the 5th working day (§-15(3)(c))",review:"Weekly (§-15(5)(d))",notes:"Daily (§-22(6)(b))",docs:["Admission criteria per ch. 75-09.1-05 / §75-09.1-05.1-04","Medicaid: programming hours listed in the plan"],cites:["75-09.1-05","75-09.1-05.1"]},
+ {id:"3.1",name:"Level III.1 Clinically Managed Low-Intensity Residential",ch:"75-09.1-02 / 75-09.1-02.1",ed4:"3.1 Clinically Managed Low-Intensity Residential",plan:"End of the 5th working day (§-15(3)(c)); time-specific goals and objectives (§75-09.1-02-02(6))",review:"Monthly (§-15(5)(b))",notes:"Monthly (§-22(6)(f))",docs:["Plan developed in collaboration with care providers (§75-09.1-02-02(6))","Record of progress and activities (§75-09.1-02-02(7))","Admission criteria §75-09.1-02-04 / -02.1-04"],cites:["75-09.1-02","75-09.1-02.1"]},
+ {id:"3.2",name:"Level III.2-D Social Detoxification",ch:"75-09.1-08",ed4:"3.5 with withdrawal management (3.2-WM crosswalk)",plan:"End of the first day (§-15(3)(a)). Preliminary plan covering ASAM dimensions 2–6 with goals and measurable objectives (§75-09.1-08-02(12))",review:"ND silent: no interval in §-15(5)",notes:"ND silent: not listed in §-22(6)",docs:["Admission and continued stay criteria §75-09.1-08-04","Referral-to-acute-care criteria §75-09.1-08-05","Criteria that social detox is not necessary §75-09.1-08-06"],cites:["75-09.1-08"]},
+ {id:"3.3",name:"Level 3.3 Population-Specific High-Intensity Residential",ch:"None in ND",ed4:"Removed; covered within 3.5",plan:"ND silent (no chapter)",review:"ND silent",notes:"ND silent",docs:["No ND licensing chapter. Follow the chapter under which the program is actually licensed."],cites:[]},
+ {id:"3.5",name:"Level III.5 Clinically Managed High-Intensity (adult) / Medium-Intensity (adolescent) Residential",ch:"75-09.1-03 / 75-09.1-03.1",ed4:"3.5 Clinically Managed High-Intensity Residential",plan:"End of the 5th working day (§-15(3)(c))",review:"Weekly (§-15(5)(d))",notes:"Weekly (§-22(6)(e))",docs:["Admission criteria §75-09.1-03-04 / -03.1-04","Medicaid pays only the service component at 3.5 (no room and board)"],cites:["75-09.1-03","75-09.1-03.1"]},
+ {id:"3.7",name:"Level III.7 Medically Monitored Intensive Inpatient",ch:"75-09.1-04 / 75-09.1-04.1",ed4:"3.7 Medically Managed Residential",plan:"End of the 5th working day (§-15(3)(c))",review:"Weekly (§-15(5)(d))",notes:"Every shift (inpatient, §-22(6)(a))",docs:["Admission criteria §75-09.1-04-04 / -04.1-04","Medicaid pays only the service component at 3.7 (no room and board)"],cites:["75-09.1-04","75-09.1-04.1"]},
+ {id:"4",name:"Level 4 Medically Managed Intensive Inpatient",ch:"None in 75-09.1 (hospital setting)",ed4:"4 Medically Managed Intensive Inpatient",plan:"ND silent in 75-09.1; hospital licensure, CMS, and accreditor rules apply",review:"ND silent in 75-09.1",notes:"Hospital rules",docs:["Document a §-20 criterion and a transfer summary when stepping down to a 75-09.1 level"],cites:[]},
+ {id:"otp",name:"Opioid Treatment Program (MOUD)",ch:"75-09.1-10 (plus the underlying level chapter)",ed4:"OTP services delivered within a level (often 1.7 / outpatient)",plan:"Federal: initial psychosocial assessment and care plan within 14 calendar days of admission (42 CFR 8.12(f)(4)). ND chapter 01 deadlines also apply through the underlying license.",review:"Federal: “reviewed and updated to reflect responses to treatment” (no fixed interval); ND §-15(5) applies through the underlying level",notes:"Per underlying level and program policy",docs:["§75-09.1-01-20 discharge/transfer criteria do NOT apply to OTPs (§75-09.1-10-02(1)(a))","Treatment plan definition: attainable short-term goals mutually acceptable to the patient, with services, frequency, and schedule (§75-09.1-10-01(27))"],cites:["75-09.1-10"]}
+];
+var DL=[
+ ["Individual treatment plan","Social detox (III.2-D)","End of first day","§75-09.1-01-15(3)(a)","state",["3.2"]],
+ ["Preliminary plan covering dimensions 2–6","Social detox (III.2-D)","At admission (part of program criteria)","§75-09.1-08-02(12)","state",["3.2"]],
+ ["Individual treatment plan","OP (I), IOP (II.1)","End of third session","§75-09.1-01-15(3)(b)","state",["1","1cc","2.1"]],
+ ["Individual treatment plan","Day tx/PHP (II.5), III.1, III.5, III.7","End of fifth working day","§75-09.1-01-15(3)(c)","state",["2.5","3.1","3.5","3.7"]],
+ ["Psychosocial assessment and care plan","OTP","Within 14 calendar days of admission","42 CFR 8.12(f)(4)","fed",["otp"]],
+ ["Plan review","OP (I)","Every 2 months or every 8 sessions, whichever is first","§75-09.1-01-15(5)(a)","state",["1"]],
+ ["Plan review","III.1","Monthly","§75-09.1-01-15(5)(b)","state",["3.1"]],
+ ["Plan review","IOP (II.1)","Every 2 weeks","§75-09.1-01-15(5)(c)","state",["2.1"]],
+ ["Plan review","III.5, III.7, PHP/day tx (II.5)","Weekly","§75-09.1-01-15(5)(d)","state",["2.5","3.5","3.7"]],
+ ["Plan review","Chronic care & maintenance","Once in first 6 months, then annually","§75-09.1-01-15(5)(e)","state",["1cc"]],
+ ["Plan review","Social detox","(none set)","ND silent","silent",["3.2"]],
+ ["Plan modification","All levels","After any occurrence likely to affect progress","§75-09.1-01-15(5)","state",["all"]],
+ ["Progress notes","Inpatient (III.7)","Every shift","§75-09.1-01-22(6)(a)","state",["3.7"]],
+ ["Progress notes","Day treatment (II.5)","Daily","§75-09.1-01-22(6)(b)","state",["2.5"]],
+ ["Progress notes","IOP (II.1)","Weekly","§75-09.1-01-22(6)(c)","state",["2.1"]],
+ ["Progress notes","OP (I)","Weekly if seen weekly or more; else monthly","§75-09.1-01-22(6)(d)","state",["1","1cc"]],
+ ["Progress notes","III.5","Weekly","§75-09.1-01-22(6)(e)","state",["3.5"]],
+ ["Progress notes","III.1","Monthly","§75-09.1-01-22(6)(f)","state",["3.1"]],
+ ["Discharge / transfer summary","All levels","(none set): per program written policy","§75-09.1-01-22(6)","silent",["all"]],
+ ["Record retention (Medicaid)","All Medicaid-billed services","At least 7 years after last claim paid or denied","ND Medicaid SUD policy","medicaid",["all"]],
+ ["Formal reassessment (recommendation)","2.1, 2.5, 3.1, 3.5","Monthly (ASAM 4th ed. FAQ); ND minimums control","ASAM FAQ","best",["2.1","2.5","3.1","3.5"]],
+ ["Part 2 2024 rule compliance date","All programs","February 16, 2026 (now in effect)","89 FR 12472","fed",["all"]]
+];
+</script>
+<script>
+(function(){
+function $(s,c){return (c||document).querySelector(s)}
+function $$(s,c){return Array.prototype.slice.call((c||document).querySelectorAll(s))}
+function esc(t){return String(t).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+/* Tabs */
+var tabs=$$('nav.side [role=tab]');
+function show(id,focus){tabs.forEach(function(b){var on=b.dataset.tab===id;b.setAttribute('aria-selected',on);b.tabIndex=on?0:-1;if(on&&focus)b.focus()});
+ $$('section.tab').forEach(function(s){s.classList.toggle('active',s.id===id)});try{history.replaceState(null,'','#'+id)}catch(e){}}
+tabs.forEach(function(b,i){b.addEventListener('click',function(){show(b.dataset.tab);$('#main').focus({preventScroll:true});window.scrollTo(0,0)});
+ b.addEventListener('keydown',function(e){var k=e.key,n=null;if(k==='ArrowDown'||k==='ArrowRight')n=(i+1)%tabs.length;if(k==='ArrowUp'||k==='ArrowLeft')n=(i-1+tabs.length)%tabs.length;if(k==='Home')n=0;if(k==='End')n=tabs.length-1;if(n!==null){e.preventDefault();show(tabs[n].dataset.tab,true)}})});
+if(location.hash&&document.getElementById(location.hash.slice(1))&&/^#t-/.test(location.hash))show(location.hash.slice(1));
+/* Expand/collapse/print */
+$('#expandAll').onclick=function(){$$('details').forEach(function(d){d.open=true})};
+$('#collapseAll').onclick=function(){$$('details').forEach(function(d){d.open=false})};
+var saved=[];
+window.addEventListener('beforeprint',function(){saved=$$('details').map(function(d){return d.open});$$('details').forEach(function(d){d.open=true})});
+window.addEventListener('afterprint',function(){$$('details').forEach(function(d,i){d.open=saved[i]});document.body.classList.remove('print-one');$$('.print-target').forEach(function(s){s.classList.remove('print-target')})});
+$('#printAll').onclick=function(){document.body.classList.remove('print-one');window.print()};
+$$('[data-print]').forEach(function(b){b.onclick=function(){document.body.classList.add('print-one');document.getElementById(b.dataset.print).classList.add('print-target');window.print()}});
+/* Checklists */
+function store(k,v){try{if(v===undefined)return localStorage.getItem(k);localStorage.setItem(k,v)}catch(e){return null}}
+function upd(g){var bx=$$('ul[data-group='+g+'] input'),n=bx.filter(function(x){return x.checked}).length;$('#'+g+'Bar').style.width=(100*n/bx.length)+'%';$('#'+g+'Count').textContent=n+' of '+bx.length+' items checked'}
+['dc','tp'].forEach(function(g){$$('ul[data-group='+g+'] input').forEach(function(x){x.checked=store('ndsud-'+x.id)==='1';x.addEventListener('change',function(){store('ndsud-'+x.id,x.checked?'1':'0');upd(g)})});upd(g)});
+$$('[data-clear]').forEach(function(b){b.onclick=function(){var g=b.dataset.clear;$$('ul[data-group='+g+'] input').forEach(function(x){x.checked=false;store('ndsud-'+x.id,'0')});upd(g)}});
+/* Dimensions */
+$('#dimTable').innerHTML=D3.map(function(d,i){return '<tr><td>'+(i+1)+'</td><td>'+esc(d)+'</td><td>'+esc(D4[i])+'</td></tr>'}).join('');
+/* Level selector */
+function link(c){return '<a href="'+R+c+'.pdf">NDAC ch. '+c+'</a>'}
+function lvl(id){var l=L.filter(function(x){return x.id===id})[0];$$('#levelPick button').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.id===id)});
+ $('#levelOut').innerHTML='<h3>'+esc(l.name)+'</h3><dl class="facts"><dt>ND chapter</dt><dd>'+esc(l.ch)+'</dd><dt>ASAM 4th ed. (2023)</dt><dd>'+esc(l.ed4)+'</dd><dt>Treatment plan due</dt><dd>'+esc(l.plan)+'</dd><dt>Plan review (minimum)</dt><dd>'+esc(l.review)+'</dd><dt>Progress notes</dt><dd>'+esc(l.notes)+'</dd><dt>Level-specific documentation</dt><dd><ul>'+l.docs.map(function(d){return '<li>'+esc(d)+'</li>'}).join('')+'</ul></dd><dt>Always (ch. 01)</dt><dd>Client participation and signature or documented involvement; LAC present at planning and level-of-care meetings; continued stay per §-19; transfer or discharge per §-20 and summaries per §-22(5)(s)–(t).</dd><dt>Rule text</dt><dd>'+(l.cites.length?l.cites.map(link).join(' · '):'<span class="tag t-silent">No ND chapter</span>')+' · <a href="'+R+'75-09.1-01.pdf">ch. 01</a></dd></dl>'}
+$('#levelPick').innerHTML=L.map(function(l){return '<button type="button" data-id="'+l.id+'" aria-pressed="false" title="'+esc(l.name)+'">'+(l.id==='1cc'?'1 CC&amp;M':l.id==='otp'?'OTP':l.id==='3.2'?'3.2-D WM':l.id)+'</button>'}).join('');
+$$('#levelPick button').forEach(function(b){b.onclick=function(){lvl(b.dataset.id)}});lvl('3.5');
+/* Deadlines */
+var TG={state:'<span class="tag t-state">ND rule</span>',fed:'<span class="tag t-fed">Federal</span>',medicaid:'<span class="tag t-medicaid">ND Medicaid</span>',silent:'<span class="tag t-silent">ND silent</span>',best:'<span class="tag t-best">ASAM</span>'};
+var f=$('#dlFilter');L.forEach(function(l){var o=document.createElement('option');o.value=l.id;o.textContent=l.name;f.appendChild(o)});
+function dl(){var v=f.value;$('#dlTable tbody').innerHTML=DL.filter(function(r){return v==='all'||r[5].indexOf(v)>-1||r[5].indexOf('all')>-1}).map(function(r){return '<tr><td>'+esc(r[0])+'</td><td>'+esc(r[1])+'</td><td><strong>'+esc(r[2])+'</strong></td><td>'+esc(r[3])+'</td><td>'+TG[r[4]]+'</td></tr>'}).join('');if(q.value)search()}
+f.onchange=dl;
+/* Wizard */
+var W=$('#wizard');
+W.innerHTML='<h3>Level-of-care change walkthrough</h3>'+
+'<div class="step"><h4>Step 1: Current placement</h4><div class="row"><label for="wCur">Current level:</label> <select id="wCur">'+L.map(function(l){return '<option value="'+l.id+'">'+esc(l.name)+'</option>'}).join('')+'</select> <label for="wEd">Dimension names:</label> <select id="wEd"><option value="4">ASAM 4th ed. (2023)</option><option value="3">ASAM 3rd ed. (as in ND rule)</option></select></div></div>'+
+'<div class="step"><h4>Step 2: Reassess all six dimensions</h4><p class="small">For each dimension, record the change since the last review and the measurable, behavioral evidence (§-22(5)(g), (s)).</p><div class="tablewrap"><table class="dimgrid"><thead><tr><th>Dimension</th><th>Change</th><th>Evidence (measurable, behavioral)</th></tr></thead><tbody id="wDims"></tbody></table></div></div>'+
+'<div class="step"><h4>Step 3: Which ND criterion applies?</h4><fieldset style="border:0;padding:0;margin:0"><legend class="sr">Criterion</legend>'+
+'<label class="opt"><input type="radio" name="wc" value="cs1"> Continued stay §-19(1): making progress, goals not yet met, continuing at this level is necessary</label>'+
+'<label class="opt"><input type="radio" name="wc" value="cs2"> Continued stay §-19(2): not yet progressing but has capacity and is actively working on goals</label>'+
+'<label class="opt"><input type="radio" name="wc" value="cs3"> Continued stay §-19(3): new problems best treated at this (least intensive effective) level</label>'+
+'<label class="opt"><input type="radio" name="wc" value="d1"> Transfer/discharge §-20(1): goals achieved; ready for less intensive care or independent living</label>'+
+'<label class="opt"><input type="radio" name="wc" value="d2"> Transfer §-20(2): unable to resolve despite plan amendments; no further progress likely</label>'+
+'<label class="opt"><input type="radio" name="wc" value="d3"> Transfer §-20(3): lack of capacity to resolve problems; other level or service needed</label>'+
+'<label class="opt"><input type="radio" name="wc" value="d4"> Transfer §-20(4): problems intensified or new problems; only a more intensive level is effective</label>'+
+'<label class="opt"><input type="radio" name="wc" value="none"> None fits (e.g., AMA or administrative discharge, or placement outside criteria)</label></fieldset></div>'+
+'<div class="step" id="wS4"><h4>Step 4: Receiving level &amp; safeguards</h4><div class="row"><label for="wTo">Receiving level:</label> <select id="wTo"><option value="">(discharge with no receiving level)</option>'+L.map(function(l){return '<option value="'+l.id+'">'+esc(l.name)+'</option>'}).join('')+'</select></div>'+
+'<label class="opt"><input type="checkbox" id="wAdm"> Client meets DSM diagnosis and the ASAM dimension specs for the receiving level (§-18 and receiving chapter admission section)</label>'+
+'<label class="opt"><input type="checkbox" id="wLac"> LAC present at the level-of-care team meeting (§-15(6))</label>'+
+'<label class="opt"><input type="checkbox" id="wCli"> Client actively involved in the decision (§-22(5)(l))</label>'+
+'<label class="opt"><input type="checkbox" id="wExt"> Receiving provider is outside this program (needs Part 2 consent)</label></div>'+
+'<div class="result" id="wOut" aria-live="polite"></div>';
+function dims(){var D=$('#wEd').value==='3'?D3:D4;$('#wDims').innerHTML=D.map(function(d,i){var k='wd'+i;return '<tr><td><strong>D'+(i+1)+'</strong> '+esc(d)+'</td><td><select id="'+k+'s" aria-label="Change in dimension '+(i+1)+'"><option value="">Not assessed</option><option>Improved</option><option>No change</option><option>Worsened</option><option>New problem</option></select></td><td><input type="text" id="'+k+'e" aria-label="Evidence for dimension '+(i+1)+'" placeholder="e.g., 0 positive UDS in 3 weeks; attended 9/9 groups"></td></tr>'}).join('');$$('#wDims select,#wDims input').forEach(function(x){x.oninput=wiz;x.onchange=wiz})}
+function nm(id){var l=L.filter(function(x){return x.id===id})[0];return l?l.name:''}
+function wiz(){var cur=$('#wCur').value,c=($$('input[name=wc]').filter(function(x){return x.checked})[0]||{}).value,to=$('#wTo').value,out=[],warn=[];
+ var D=$('#wEd').value==='3'?D3:D4,miss=[],worse=0;D.forEach(function(d,i){var s=$('#wd'+i+'s').value,e=$('#wd'+i+'e').value.trim();if(!s)miss.push('D'+(i+1));if(s==='Worsened'||s==='New problem')worse++;if(s&&!e)warn.push('D'+(i+1)+' has a rating but no measurable evidence.')});
+ if(miss.length)warn.push('Not yet assessed: '+miss.join(', ')+'. ND requires a six-dimension assessment (§-22(5)(c)).');
+ $('#wS4').classList.toggle('dim',!c||/^cs/.test(c));
+ if(!c){$('#wOut').innerHTML='<strong>Choose a criterion in Step 3</strong> to generate the documentation list.'+(warn.length?'<ul>'+warn.map(function(w){return '<li>'+esc(w)+'</li>'}).join('')+'</ul>':'');return}
+ out.push('Six-dimension reassessment with measurable, behavioral evidence (§-14; §-22(5)(c), (g))');
+ if(/^cs/.test(c)){out.push('Plan review note documenting the continued-stay criterion '+c.replace('cs','§-19(')+') and the client\'s active involvement (§-15(5); §-19)');out.push('Updated goals and services if any significant occurrence (§-15(5))');out.push('Next review due: '+(L.filter(function(x){return x.id===cur})[0].review));if(worse)warn.push(worse+' dimension(s) worsened or new. Check whether §-19(3) (least-intensive level) still holds or whether §-20(4) applies.')}
+ else{if(c==='none'){out.push('Document the grounds for the discharge or placement decision because the department criteria were not met (§-22(5)(u))')}else{out.push('State the §-20('+c.slice(1)+') criterion explicitly in the record')}
+  out.push('Discharge summary: progress and attainment of plan goals in measurable, behavioral terms, plus the criteria for discharge (§-22(5)(t))');
+  out.push('Referrals and recommendations written into the discharge plan (§-21(1)); verify the referral during and after treatment (§-21(2))');
+  if(to){out.push('Transfer summary for the move from '+nm(cur)+' to '+nm(to)+' (§-22(5)(s))');out.push('Discharge plan listing goals not yet achieved and problems deferred to the next provider (§-22(5)(t))');out.push('New or updated plan at the receiving level by: '+L.filter(function(x){return x.id===to})[0].plan);
+   var order=['0.5','1cc','1','2.1','2.5','3.1','3.2','3.3','3.5','3.7','4'],a=order.indexOf(cur),b=order.indexOf(to);
+   if(a>-1&&b>-1){if(b>a&&(c==='d1'))warn.push('§-20(1) describes readiness for LESS intensive care, but the receiving level looks more intensive.');if(b<a&&c==='d4')warn.push('§-20(4) describes a MORE intensive level, but the receiving level looks less intensive.')}
+   if(!$('#wAdm').checked)warn.push('Confirm and document receiving-level admission criteria (§-18; receiving chapter).');}
+  if(!$('#wLac').checked)warn.push('An LAC must be present in the level-of-care team meeting (§-15(6)).');
+  if(!$('#wCli').checked)warn.push('Document the client\'s direct involvement (§-22(5)(l)).');
+  if($('#wExt').checked)out.push('Part 2-compliant written consent (42 CFR 2.31), minimum-necessary release, and redisclosure notice or stamp (§-21(3); 42 CFR 2.32)');
+  if(cur==='otp')warn.push('OTP: §-20 does not apply to OTPs (§75-09.1-10-02(1)(a)). Follow 42 CFR 8.12 and program policy.');
+  out.push('Complete the summary within your program-policy timeframe. ND sets no number of days (§-22(6)).')}
+ $('#wOut').innerHTML='<h4 style="margin:0 0 6px">Documentation to complete</h4><ol>'+out.map(function(o){return '<li>'+esc(o)+'</li>'}).join('')+'</ol>'+(warn.length?'<div class="note warn"><strong>Check:</strong><ul>'+warn.map(function(w){return '<li>'+esc(w)+'</li>'}).join('')+'</ul></div>':'')+'<p class="small">Generated from NDAC 75-09.1-01. Verify against current rules and program policy.</p>'}
+$('#wEd').onchange=function(){dims();wiz()};$$('#wizard select,#wizard input').forEach(function(x){x.addEventListener('change',wiz)});dims();wiz();
+/* Search */
+var q=$('#q');
+function unmark(){$$('mark.hit').forEach(function(m){var p=m.parentNode;p.replaceChild(document.createTextNode(m.textContent),m);p.normalize()})}
+function markIn(el,re){var w=document.createTreeWalker(el,NodeFilter.SHOW_TEXT,{acceptNode:function(n){return n.parentNode.closest('script,style,select,option,button,mark')?NodeFilter.FILTER_REJECT:NodeFilter.FILTER_ACCEPT}}),ns=[],n;while(n=w.nextNode())ns.push(n);
+ ns.forEach(function(t){var s=t.nodeValue;re.lastIndex=0;if(!re.test(s))return;var fr=document.createDocumentFragment(),last=0;s.replace(re,function(m,i){fr.appendChild(document.createTextNode(s.slice(last,i)));var k=document.createElement('mark');k.className='hit';k.textContent=m;fr.appendChild(k);last=i+m.length});fr.appendChild(document.createTextNode(s.slice(last)));t.parentNode.replaceChild(fr,t)})}
+function search(){unmark();var v=q.value.trim(),cards=$$('main .card, main .kpi');
+ if(!v){document.body.classList.remove('searching');cards.forEach(function(c){c.classList.remove('hidden')});$$('section.tab').forEach(function(s){s.classList.remove('nohits')});$('#searchStatus').textContent='';return}
+ document.body.classList.add('searching');var re=new RegExp(v.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'),'gi'),hits=0;
+ cards.forEach(function(c){re.lastIndex=0;var ok=re.test(c.textContent);c.classList.toggle('hidden',!ok);if(ok){hits++;if(c.tagName==='DETAILS')c.open=true;re.lastIndex=0;markIn(c,re)}});
+ $$('section.tab').forEach(function(s){s.classList.toggle('nohits',!$$('.card:not(.hidden),.kpi:not(.hidden)',s).length)});
+ $('#searchStatus').textContent=hits+' matching section'+(hits===1?'':'s')}
+var tmr;q.addEventListener('input',function(){clearTimeout(tmr);tmr=setTimeout(search,150)});
+q.addEventListener('keydown',function(e){if(e.key==='Escape'){q.value='';search()}});
+dl();
+})();
+</script>
+</body>
+</html>
